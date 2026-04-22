@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #F6F0FF;
+  --bg-secondary: #FFFFFF;
+  --bg-card: rgba(255,255,255,0.75);
+  --text-primary: #12216A;
+  --text-secondary: #5B6B9A;
+  --text-muted: #9BAAC8;
+  --pink: #FF5FAD;
+  --pink-light: #FFD6EC;
+  --pink-dark: #D6006E;
+  --blue: #3B7EFF;
+  --blue-light: #D4E4FF;
+  --blue-dark: #0A4FCC;
+  --purple: #8B5CF6;
+  --purple-light: #EDE9FE;
+  --green: #10B981;
+  --green-light: #D1FAE5;
+  --orange: #F59E0B;
+  --orange-light: #FEF3C7;
+  --grad-pink: linear-gradient(135deg,#FF5FAD 0%,#FF8CC8 100%);
+  --grad-blue: linear-gradient(135deg,#3B7EFF 0%,#60A5FA 100%);
+  --grad-purple: linear-gradient(135deg,#8B5CF6 0%,#A78BFA 100%);
+  --grad-hero: linear-gradient(135deg,#12216A 0%,#2a5298 100%);
+  --shadow-sm: 0 2px 8px rgba(18,33,106,0.08);
+  --shadow-md: 0 4px 20px rgba(18,33,106,0.12);
+  --shadow-lg: 0 8px 40px rgba(18,33,106,0.18);
+  --shadow-pink: 0 8px 24px rgba(255,95,173,0.3);
+  --shadow-blue: 0 8px 24px rgba(59,126,255,0.3);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  --nav-height: 68px;
+  --sidebar-width: 300px;
+  --font-body: 'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-display: 'Plus Jakarta Sans','Inter',sans-serif;
+  --transition-fast: 0.15s ease;
+  --transition-med: 0.3s ease;
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--font-body); background-color:var(--bg-primary); color:var(--text-primary); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+a { text-decoration:none; color:inherit; }
+button { cursor:pointer; border:none; background:none; font-family:inherit; transition:var(--transition-fast); }
+button:active { transform:scale(0.97); }
+input,select,textarea { font-family:inherit; outline:none; }
+img { display:block; max-width:100%; }
+::-webkit-scrollbar { width:5px; height:5px; }
+::-webkit-scrollbar-thumb { background:var(--text-muted); border-radius:99px; }
+
+.app-container { max-width:100%; margin:0 auto; min-height:100vh; display:flex; flex-direction:column; }
+.main-content { flex:1; padding-top:var(--nav-height); animation:pageFadeIn 0.35s ease; }
+
+@keyframes pageFadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+@keyframes spin { to{transform:rotate(360deg)} }
+@keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes shimmer { 0%{background-position:-400px 0} 100%{background-position:400px 0} }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes glow { 0%,100%{box-shadow:0 0 20px rgba(255,95,173,0.3)} 50%{box-shadow:0 0 40px rgba(255,95,173,0.6)} }
+
+.badge { display:inline-flex; align-items:center; padding:4px 12px; border-radius:var(--radius-full); font-size:0.75rem; font-weight:600; }
+.badge-pink { background:var(--pink-light); color:var(--pink-dark); }
+.badge-blue { background:var(--blue-light); color:var(--blue-dark); }
+.badge-green { background:var(--green-light); color:var(--green); }
+.badge-orange { background:var(--orange-light); color:var(--orange); }
+.badge-purple { background:var(--purple-light); color:var(--purple); }
+
+.glass-card { background:var(--bg-card); backdrop-filter:blur(16px); border:1.5px solid rgba(255,255,255,0.8); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); }
+.skeleton { background:linear-gradient(90deg,#e8e8f0 25%,#f2f0fb 50%,#e8e8f0 75%); background-size:400px 100%; animation:shimmer 1.2s infinite; border-radius:var(--radius-sm); }
+
+.flex { display:flex; }
+.flex-col { display:flex; flex-direction:column; }
+.items-center { align-items:center; }
+.justify-between { justify-content:space-between; }
+.justify-center { justify-content:center; }
+.w-full { width:100%; }
+.gap-2 { gap:8px; }
+.gap-4 { gap:16px; }
